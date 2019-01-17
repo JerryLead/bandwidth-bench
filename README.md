@@ -6,12 +6,12 @@ How does your memory/disk bandwidth change depending on b? This tiny project ans
 - $ make
 
 For measuring memory bandwidth. One cacheline is 64B:
-- $ test mem <blockSizeInCacheLines> <totalSizeInMB>
+- $ test mem &lt;blockSizeInCacheLines&gt; &lt;totalSizeInMB&gt;
 
 For measuring disk bandwidth:
 1. Write a temporary file:
-- $ test write 0 <totalSizeInMB>
+- $ test write 0 &lt;totalSizeInMB&gt;
 2. Drop cached pages in linux:
 - $ echo 3 | sudo tee /proc/sys/vm/drop_caches
 3. Read the temporary file in blocks:
-- $ test disk <blockSizeInCacheLines> <totalSizeInMB>
+- $ test disk &lt;blockSizeInCacheLines&gt; &lt;totalSizeInMB&gt;
